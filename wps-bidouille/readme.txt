@@ -3,8 +3,8 @@ Contributors: WPServeur, NicolasKulka, Benoti, wpformation
 Donate link: https://www.paypal.me/donateWPServeur
 Tags: admin, tools, error, login, transient, wpserveur
 Requires at least: 4.2
-Tested up to: 6.5
-Stable tag: 1.32
+Tested up to: 6.7
+Stable tag: 1.33
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,10 @@ This plugin is only maintained, which means we do not guarantee free support. Co
 
 
 == Changelog ==
+
+= 1.33 =
+* Tested up to 6.7
+* Remove cookie "WPServeur-php"
 
 = 1.32 =
 * Add pub WPBoutik

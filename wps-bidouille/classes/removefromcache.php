@@ -147,7 +147,7 @@ class RemoveFromCache {
 	public function wps_rpfc_public() {
 		global $wp_query;
 
-		self::delete_cookie();
+		//self::delete_cookie();
 
 		$list_post_without_cache = get_option( 'list_post_without_cache' );
 		if ( empty( $list_post_without_cache ) ) {
@@ -165,7 +165,7 @@ class RemoveFromCache {
 		if ( in_array( $post_id, $list_post_without_cache ) ) {
 			add_action( 'send_headers', array( __CLASS__, 'add_header_nocache' ), 2 );
 			add_action( 'wp_head', array( __CLASS__, 'add_browser_nocache' ) );
-			add_action( 'wp_head', array( __CLASS__, 'send_cookie' ), 2 );
+			//add_action( 'wp_head', array( __CLASS__, 'send_cookie' ), 2 );
 		}
 	}
 
@@ -197,6 +197,7 @@ class RemoveFromCache {
 	 *
 	 */
 	public static function add_browser_nocache() { ?>
+        <!-- Disable by WPS Bidouille -->
         <meta http-equiv="cache-control" content="no-cache"/>
         <meta http-equiv="pragma" content="no-cache"/>
 		<?php
