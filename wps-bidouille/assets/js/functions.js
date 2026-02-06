@@ -65,17 +65,29 @@ jQuery(function ($) {
         $.post(ajaxurl, data);
     });
 
+    $('#nav-add-archive').click(function () {
+        $('#add-archive').attr('class', 'wps-view');
+        $('#add-mass').attr('class', 'wps-hide');
+        $('#add-simple').attr('class', 'wps-hide');
+        $('#nav-add-mass').attr('class', 'not-current');
+        $('#nav-add-simple').attr('class', 'not-current');
+        $('#nav-add-archive').attr('class', 'current');
+    });
     $('#nav-add-mass').click(function () {
         $('#add-mass').attr('class', 'wps-view');
         $('#add-simple').attr('class', 'wps-hide');
+        $('#add-archive').attr('class', 'wps-hide');
         $('#nav-add-mass').attr('class', 'current');
         $('#nav-add-simple').attr('class', 'not-current');
+        $('#nav-add-archive').attr('class', 'not-current');
     });
     $('#nav-add-simple').click(function () {
         $('#add-simple').attr('class', 'wps-view');
         $('#add-mass').attr('class', 'wps-hide');
+        $('#add-archive').attr('class', 'wps-hide');
         $('#nav-add-mass').attr('class', 'not-current');
         $('#nav-add-simple').attr('class', 'current');
+        $('#nav-add-archive').attr('class', 'not-current');
     });
 
     // multiple select with AJAX search
@@ -146,11 +158,13 @@ jQuery(function ($) {
         var elem = $(this).parent().find('.main');
         var h2 = $(this).parent().find('h2');
         var option_name = $(this).parent().attr('id');
+        var nonce = $(this).parent().parent().parent().data('nonce');
         if (elem.hasClass('wps-hide')) {
             elem.removeClass('wps-hide').addClass('wps-view');
             h2.removeClass('block-hide').addClass('block-view');
             data = {
                 'action': 'delete_option_wps_display',
+                'wps-nonce': nonce,
                 'option_name': option_name
             };
 
@@ -161,6 +175,7 @@ jQuery(function ($) {
             h2.removeClass('block-view').addClass('block-hide');
             data = {
                 'action': 'add_option_wps_display',
+                'wps-nonce': nonce,
                 'option_name': option_name
             };
 
