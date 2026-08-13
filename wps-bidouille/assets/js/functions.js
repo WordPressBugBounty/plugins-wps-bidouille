@@ -99,7 +99,8 @@ jQuery(function ($) {
             data: function (params) {
                 return {
                     q: params.term, // search query
-                    action: 'wps_get_users' // AJAX action for admin-ajax.php
+                    action: 'wps_get_users', // AJAX action for admin-ajax.php
+                    _ajax_nonce: $(this).data('nonce')
                 };
             },
             processResults: function (data) {

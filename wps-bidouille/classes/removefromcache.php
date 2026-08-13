@@ -155,7 +155,9 @@ class RemoveFromCache {
 		}
 
 		if ( isset( $wp_query->queried_object ) ) {
-			$post_id = $wp_query->queried_object->ID;
+			if ( isset( $wp_query->queried_object->ID ) ) {
+				$post_id = $wp_query->queried_object->ID;
+			}
 		} elseif ( function_exists( 'is_shop' ) && is_shop() ) {
 			$post_id = get_option( 'woocommerce_shop_page_id' );
 		} else {
@@ -617,8 +619,8 @@ if ( ! class_exists( 'WPS_Uncached_List_Table' ) ) {
 		/**
 		 * Define what data to show on each column of the table
 		 *
-		 * @param  array $item Data
-		 * @param  String $column_name - Current column name
+		 * @param array $item Data
+		 * @param String $column_name - Current column name
 		 *
 		 * @return Mixed
 		 */
@@ -668,9 +670,9 @@ if ( ! class_exists( 'WPS_Uncached_List_Table' ) ) {
 		/**
 		 * Get a list of CSS classes for the WP_List_Table table tag.
 		 *
+		 * @return array List of CSS classes for the table tag.
 		 * @since 3.1.0
 		 *
-		 * @return array List of CSS classes for the table tag.
 		 */
 		protected function get_table_classes() {
 			return array( 'widefat', 'fixed', 'striped', $this->_args['plural'], 'wps-list-cache' );

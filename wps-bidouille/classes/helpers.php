@@ -416,12 +416,6 @@ class Helpers {
 		$pf        = '';
 		$host_name = gethostname();
 		if ( strpos( $host_name, 'wps' ) !== false ) {
-
-		    if ( false !== strpos( $host_name, 'wpserveur' ) ) {
-			    $pf = 'pf1';
-			    return $pf;
-            }
-
 			$pf = preg_replace( "/[^0-9]/", '', $host_name );
 			$pf = 'pf' . $pf;
 		}

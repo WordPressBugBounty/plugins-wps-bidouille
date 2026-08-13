@@ -3,8 +3,8 @@ Contributors: WPServeur, NicolasKulka, Benoti, wpformation
 Donate link: https://www.paypal.me/donateWPServeur
 Tags: admin, tools, error, login, transient, wpserveur
 Requires at least: 4.2
-Tested up to: 6.8
-Stable tag: 1.33.3
+Tested up to: 7.1
+Stable tag: 1.33.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,14 @@ This plugin is only maintained, which means we do not guarantee free support. Co
 
 
 == Changelog ==
+
+= 1.33.5 =
+* Tested up to 7.1
+* Fix vulnerability (Thanks Shikhali Jamalzade) : A Missing Authorization vulnerability (CWE-862).
+
+= 1.33.4 =
+* Tested up to 6.9
+* Remove pub wpboutik
 
 = 1.33.3 =
 * Fix show add archive exclude from cache

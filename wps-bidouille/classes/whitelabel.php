@@ -46,6 +46,11 @@ class WhiteLabel {
 	}
 
 	public static function wps_get_users() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Accès refusé', 403 );
+		}
+
+		check_ajax_referer( 'select-users' );
 		$results    = array();
 		$user_query = new \WP_User_Query(
 			array(

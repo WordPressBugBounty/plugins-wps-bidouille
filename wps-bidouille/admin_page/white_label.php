@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	include( WPS_BIDOUILLE_DIR . 'blocks/title.php' );
 	include( WPS_BIDOUILLE_DIR . 'blocks/pub.php' );
-	include( WPS_BIDOUILLE_DIR . 'blocks/pub_wpboutik.php' );
+	//include( WPS_BIDOUILLE_DIR . 'blocks/pub_wpboutik.php' );
 	include( WPS_BIDOUILLE_DIR . 'blocks/menu.php' );
 	$users = get_users( array( 'exclude' => array( get_current_user_id() ) ) ); ?>
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 <div class="wps-add-user-whitelabel">
                     <label for="select2_wps_users"><?php _e( 'List of users to exclude from the white label:', 'wps-bidouille' ); ?></label><br/>
-                    <select id="select2_wps_users" name="select2_wps_users[]" multiple="multiple">
+                    <select id="select2_wps_users" name="select2_wps_users[]" multiple="multiple" data-nonce="<?php echo wp_create_nonce( 'select-users' ) ?>">
                         <?php
                         if ( $users ) {
                             foreach ( $users as $user ) {

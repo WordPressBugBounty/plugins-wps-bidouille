@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	include( WPS_BIDOUILLE_DIR . 'blocks/title.php' );
 	include( WPS_BIDOUILLE_DIR . 'blocks/pub.php' );
-	include( WPS_BIDOUILLE_DIR . 'blocks/pub_wpboutik.php' );
+	//include( WPS_BIDOUILLE_DIR . 'blocks/pub_wpboutik.php' );
 	include( WPS_BIDOUILLE_DIR . 'blocks/menu.php' ); ?>
 
     <div class="wps-text-suggest">

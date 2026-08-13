@@ -35,7 +35,7 @@ $class = \WPS\WPS_Bidouille\Helpers::wps_display_block( 'wps-dashboard-notificat
 
 		include( WPS_BIDOUILLE_DIR . 'blocks/wps_cleaner.php' );
 
-		include( WPS_BIDOUILLE_DIR . 'blocks/wpboutik.php' );
+		//include( WPS_BIDOUILLE_DIR . 'blocks/wpboutik.php' );
 
 		include( WPS_BIDOUILLE_DIR . 'blocks/settings_autoupdate.php' ); ?>
 	</div>
